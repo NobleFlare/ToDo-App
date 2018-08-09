@@ -14,6 +14,11 @@ toDoForm.addEventListener("submit", e => {
   li.appendChild(input);
   li.appendChild(label);
   li.appendChild(editButton);
+  editButton.addEventListener("click", e =>{
+    let newContent = prompt("new text");
+    content.parentNode.removeChild(content);
+    label.appendChild(document.createTextNode(newContent));
+  })
   li.appendChild(deleteButton);
   deleteButton.addEventListener("click", e =>{
     let parent = document.getElementById("todo");
