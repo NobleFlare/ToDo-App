@@ -15,19 +15,29 @@ toDoForm.addEventListener("submit", e => {
   li.appendChild(label);
   li.appendChild(editButton);
   li.appendChild(deleteButton);
+  deleteButton.addEventListener("click", e =>{
+    let parent = document.getElementById("todo");
+    let child = document.getElementById(textInput);
+    todo.removeChild(child);
+  })
   label.appendChild(content);
   editButton.appendChild(document.createTextNode("edit"));
   deleteButton.appendChild(document.createTextNode("delete"));
   input.type="checkbox";
   input.className="status";
-  input.id=textInput;
+  //input.id=textInput;
   input.value=textInput;
   label.for=textInput;
-  deleteButton.id=textInput;
-  li.setAttribute("id", "node" + list.children.length);
+  li.id=textInput;
   toDoForm.reset();
 });
 
+
+
+// document.addEventListener('click',function(e){
+//     if(e.target && e.target.id== 'brnPrepend'){
+//       alert("wooo");
+//  })
 
 
 
